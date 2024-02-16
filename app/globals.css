@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.activeTab {
+  @apply bg-[#425c5a]  rounded-full px-[22px] md:px-16 py-2 md:py-4 text-white;
+}
+.stopTab {
+  @apply bg-[#c99c33]  rounded-full px-4 py-2 text-white;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+.gradient-border {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  z-index: -10;
+  top: 1.5rem;
+  right: -0.5rem;
+  border-radius: 50%;
+  background: #425c5a;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #c99c33, #c99c33) border-box;
+}
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+  border-bottom: 20px solid #c99c33;
+  margin-left: -0.6px;
+}
+
+.menu {
+  padding: 40px 0 40px 20px;
+  list-style-type: none;
+  width: 250px;
+  position: relative;
+}
+.menu > li {
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.active::before,
+.active::after {
+  content: "";
+  position: absolute;
+}
+.active {
+  background: #e1eceb;
+  border-radius: 60px 0 0 60px;
+}
+.menu > li > a {
+  padding: 10px 15px;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+.active span > a {
+  color: #526b69 !important;
+}
+.active::before {
+  top: -80px;
+  right: -1px;
+  height: 80px;
+  width: 40px;
+  border-bottom-right-radius: 80px;
+  -moz-border-bottom-right-radius: 80px;
+  -webkit-border-bottom-right-radius: 80px;
+  -webkit-box-shadow: 0 40px 0 0 #e1eceb;
+  -moz-box-shadow: 0 40px 0 0 #e1eceb;
+  box-shadow: 0 40px 0 0 #e1eceb;
+}
+.active::after {
+  top: 50px;
+  right: -1px;
+  height: 80px;
+  width: 40px;
+  border-top-right-radius: 80px;
+  -moz-border-top-right-radius: 80px;
+  -webkit-border-top-right-radius: 80px;
+  -webkit-box-shadow: 0 -40px 0 0 #e1eceb;
+  -moz-box-shadow: 0 -40px 0 0 #e1eceb;
+  box-shadow: 0 -40px 0 0 #e1eceb;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+/* @media (max-width: 1200px) {
+  .menu {
+    width: 150px;
+  }
+} */
